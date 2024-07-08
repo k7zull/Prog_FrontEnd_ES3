@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Calorías</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 descripcion">
+                <h2>¿Qué es la estimación de calorías quemadas en ejercicio?</h2>
+                <p>Es un cálculo que nos permite estimar cuántas calorías quema una persona al realizar actividad física, en este caso, caminar o correr.</p>
+                <h2>¿Para qué sirve?</h2>
+                <ul>
+                    <li>Ayuda a las personas a entender el gasto energético de sus actividades.</li>
+                    <li>Es útil para planificar rutinas de ejercicio y dietas.</li>
+                    <li>Permite comparar la intensidad de diferentes actividades.</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h2>Calculadora de Calorías</h2>
+                <form id="calorieForm">
+                    <div class="mb-3">
+                        <label for="peso" class="form-label">Peso (kg):</label>
+                        <input type="number" class="form-control" id="peso" name="peso" min="1" max="120" required>
+                        <div class="invalid-feedback">Por favor ingrese un peso válido (1-120 kg).</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="tiempo" class="form-label">Tiempo (minutos):</label>
+                        <input type="number" class="form-control" id="tiempo" name="tiempo" min="5" max="150" required>
+                        <div class="invalid-feedback">Por favor ingrese un tiempo válido (5-150 minutos).</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="actSeleccionada" class="form-label">Actividad:</label>
+                        <select class="form-select" id="actSeleccionada">
+                            <option value="caminar" selected>Caminar</option>
+                            <option value="correr">Correr</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="calcularCalorias()">Calcular Calorías</button>
+                </form>
+                <div id="resultadoCalorias" class="alert alert-info mt-3" style="display: none;">
+                    <p id="caloriasText"></p>
+                </div>
+                <div id="alerta" class="alert alert-danger mt-3" style="display: none;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/calculo.js"></script>
+</body>
+</html>
